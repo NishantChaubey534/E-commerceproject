@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Create Owner</title>
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h1 class="text-2xl font-semibold text-gray-800 mb-6">Create Owner</h1>
+
+            <% if (errors && errors.length> 0) { %>
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <% errors.forEach(error=> { %>
+                        <strong class="font-bold">
+                            <%= error.msg %>
+                        </strong><br>
+                        <% }) %>
+                </div>
+                <% } %>
+
+                    <form action="/owners/create" method="POST">
+                        <div class="space-y-4">
+                            <div class="form-group">
+                                <label for="fullName" class="block text-gray-600">Full Name:</label>
+                                <input type="text" id="fullName" name="fullName"
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    value="<%= owner.fullName %>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="block text-gray-600">Email Address:</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    value="<%= owner.email %>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="block text-gray-600">Password:</label>
+                                <input type="password" id="password" name="password"
+                                    class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="mt-6 w-full py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Create
+                            Owner</button>
+                    </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

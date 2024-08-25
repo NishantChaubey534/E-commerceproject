@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyStore: Where Quality Meets Convenience</title>
+    <link rel="shortcut icon" href="./icons8-cart-24.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Now Display', sans-serif;
+        }
+
+      
+        .header {
+            background: linear-gradient(135deg, #3182ce, #2b6cb0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .header:hover {
+            background: linear-gradient(135deg, #2b6cb0, #3182ce);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .header a {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .header a:hover {
+            color: #fbd38d;
+            transform: scale(1.05);
+        }
+
+        .header a.active {
+            border-bottom: 2px solid #fbd38d;
+            padding-bottom: 2px;
+        }
+
+        .header h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        @keyframes bounceIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header .nav-items {
+            animation: bounceIn 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="header w-full flex justify-between px-5 py-3 items-center">
+        <h3 class="text-xl font-bold">MyStore</h3>
+        <div class="nav-items flex gap-6">
+            <a href="/shop" class="transition-transform transform hover:scale-105">Shop</a>
+            <a href="/cart" class="transition-transform transform hover:scale-105 flex items-center">
+                <i class="ri-shopping-cart-line"></i> 
+            </a>
+            <a href="/account" class="transition-transform transform hover:scale-105">My Account</a>
+            <a href="/logout" class="text-red-600 transition-transform transform hover:scale-105">Logout</a>
+        </div>
+    </nav>
+</body>
+
+</html>

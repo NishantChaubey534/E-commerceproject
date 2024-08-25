@@ -1,0 +1,66 @@
+<%- include('./partials/header') %>
+    <div class="w-full h-screen flex gap-10 px-20 py-20">
+
+        <div class="flex-1 overflow-y-auto max-h-screen pr-5">
+            <% user.cart.slice().reverse().forEach(item=> { %>
+                <div class="mb-5 rounded-md overflow-hidden border">
+                    <div class="w-full flex justify-center items-center h-80 bg-[<%= item.bgcolor %>]">
+                        <img class="h-[18rem]" src="data:image/jpeg;base64, <%= item.image.toString('base64') %>"
+                            alt="Item Image">
+                    </div>
+                    <div class="w-full flex justify-between px-5 py-4 bg-[<%= item.panelcolor %>]">
+                        <h3 class="text-2xl">
+                            <%= item.name %>
+                        </h3>
+                        <div class="flex items-center gap-2">
+
+                            <button
+                                class="w-7 h-7 bg-white flex rounded-full items-center justify-center ri-add-line"></button>
+                            <div class="px-2 py-1 rounded-md bg-white text-black">
+                                <%= item.quantity %>
+                            </div>
+                            <button
+                                class="w-7 h-7 bg-white flex rounded-full items-center justify-center ri-subtract-line"></button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between px-5 py-3 bg-[<%= item.textcolor %>]">
+                        <h4 class="text-lg">Net Total</h4>
+                        <h2 class="text-lg">₹ <%= item.price - item.discount %>
+                        </h2>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+
+        <div class="w-[30%] sticky top-0 max-h-screen overflow-y-auto bg-white border p-5">
+            <h3 class="text-xl">Price Breakdown</h3>
+            <div class="mt-5">
+                <div class="flex mt-2 justify-between">
+                    <h4>Total MRP</h4>
+                    <h4>₹ <%= user.cart.reduce((total, item)=> total + item.price, 0) %></h4>
+                </div>
+                <div class="flex mt-2 justify-between">
+                    <h4>Discount on MRP</h4>
+                    <h4>₹ <%= user.cart.reduce((total, item)=> total + item.discount, 0) %></h4>
+                </div>
+                <div class="flex mt-2 justify-between">
+                    <h4>Platform Fee</h4>
+                    <h4>₹ 20</h4>
+                </div>
+                <div class="flex mt-2 justify-between">
+                    <h4>Shipping Fee</h4>
+                    <h4>FREE</h4>
+                </div>
+            </div>
+            <div class="w-full h-[1px] bg-black mt-10"></div>
+            <div class="flex mt-5 justify-between">
+                <h3 class="text-xl">Total Amount</h3>
+                <h3 class="font-semibold text-xl text-green-600">₹ <%= bill %>
+                </h3>
+            </div>
+            <form action="/checkout" method="post" class="mt-5">
+                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Proceed to Checkout</button>
+            </form>
+        </div>
+    </div>
+    <%- include('./partials/footer') %>

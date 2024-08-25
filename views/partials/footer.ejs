@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        .footer {
+            background: #1a202c;
+            color: #e2e8f0; 
+            padding: 1rem; 
+            border-top: 1px solid #2d3748;
+            position: relative;
+            overflow: hidden;
+            font-size: 0.875rem; 
+        }
+
+        .footer h4 {
+            font-size: 1rem; 
+            font-weight: bold;
+            margin-bottom: 0.5rem; 
+        }
+
+        .footer p {
+            margin-bottom: 1rem; 
+        }
+
+        .footer a {
+            color: #e2e8f0;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #63b3ed;
+        }
+
+        .footer .social-icons {
+            display: flex;
+            gap: 0.75rem; 
+            margin: 0.5rem 0; 
+        }
+
+        .footer .social-icons a {
+            font-size: 1.25rem; 
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer .social-icons a:hover {
+            color: #63b3ed; 
+            transform: scale(1.1);
+        }
+
+        .footer .back-to-top {
+            position: absolute;
+            bottom: 0.5rem; 
+            right: 0.5rem; 
+            background: #63b3ed;
+            color: #ffffff;
+            padding: 0.5rem;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer .back-to-top:hover {
+            background: #3182ce;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer-content {
+            animation: fadeInUp 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <footer class="footer">
+        <div class="footer-content container mx-auto flex flex-col lg:flex-row lg:justify-between">
+            <div class="mb-6 lg:mb-0">
+                <h4>About Us</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            </div>
+
+            <div class="mb-6 lg:mb-0">
+                <h4>Quick Links</h4>
+                <ul class="list-none space-y-1">
+                    <li><a href="/shop">Shop</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="mb-6 lg:mb-0">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" class="ri-facebook-fill"></a>
+                    <a href="https://twitter.com" target="_blank" class="ri-twitter-fill"></a>
+                    <a href="https://instagram.com" target="_blank" class="ri-instagram-fill"></a>
+                    <a href="https://linkedin.com" target="_blank" class="ri-linkedin-fill"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-to-top" onclick="scrollToTop()">
+            <i class="ri-arrow-up-s-line"></i>
+        </div>
+    </footer>
+
+    <script>
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>

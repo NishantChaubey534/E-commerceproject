@@ -1,0 +1,89 @@
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <%- include('./partials/header') %>
+
+        <main class="flex-grow flex items-center justify-center p-4">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg animate-fadeIn">
+                <h1 class="text-2xl font-semibold text-gray-800 mb-6">Checkout</h1>
+                <form action="/checkout" method="POST">
+                    <h2 class="text-xl font-medium text-gray-700 mb-4">Billing Information</h2>
+                    <div class="space-y-4">
+                        <div class="form-group">
+                            <label for="fullName" class="block text-gray-600">Full Name:</label>
+                            <input type="text" id="fullName" name="fullName"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="block text-gray-600">Email Address:</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="block text-gray-600">Address:</label>
+                            <input type="text" id="address" name="address"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city" class="block text-gray-600">City:</label>
+                            <input type="text" id="city" name="city"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state" class="block text-gray-600">State:</label>
+                            <input type="text" id="state" name="state"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip" class="block text-gray-600">Zip Code:</label>
+                            <input type="text" id="zip" name="zip"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country" class="block text-gray-600">Country:</label>
+                            <input type="text" id="country" name="country"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                    </div>
+
+                    <h2 class="text-xl font-medium text-gray-700 mt-6 mb-4">Payment Information</h2>
+                    <div class="space-y-4">
+                        <div class="form-group">
+                            <label for="cardNumber" class="block text-gray-600">Card Number:</label>
+                            <input type="text" id="cardNumber" name="cardNumber"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiryDate" class="block text-gray-600">Expiry Date:</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv" class="block text-gray-600">CVV:</label>
+                            <input type="text" id="cvv" name="cvv"
+                                class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="mt-6 w-full py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Complete
+                        Purchase</button>
+                </form>
+            </div>
+        </main>
+
+        <%- include('./partials/footer') %>
+</body>
+
+</html>
