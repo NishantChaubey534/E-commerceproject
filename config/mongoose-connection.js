@@ -4,16 +4,16 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const config=require('config');
-const dbgr=require("debug")("development:mongoose");
+// const dbgr=require("debug")("development:mongoose");
 
 const mongoURI = process.env.MONGODB_URI;
 
 mongoose.connect(mongoURI, {
 }).then(()=>{
-    dbgr("connected");
+    console.log("connected");
 })
 .catch((err)=>{
-    dbgr(err);
+    console.log(err);
 
 });
 module.exports=mongoose.connection;
