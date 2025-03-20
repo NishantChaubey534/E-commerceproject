@@ -29,7 +29,7 @@ Ensure you have the following installed:
 ### Steps
 1. Clone the repository:
    ```sh
-   git clone [<repository_url>](https://github.com/NishantChaubey534/E-commerceproject)
+   git clone [<repository_url>](https://github.com/NishantChaubey534/E-commerceproject.git)
    cd E-commerceproject
    ```
 
