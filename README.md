@@ -29,8 +29,8 @@ Ensure you have the following installed:
 ### Steps
 1. Clone the repository:
    ```sh
-   git clone <repository_url>
-   cd <project_directory>
+   git clone [<repository_url>](https://github.com/NishantChaubey534/E-commerceproject)
+   cd E-commerceproject
    ```
 
 2. Install dependencies:
@@ -103,6 +103,25 @@ project-folder/
 - **isLoggedIn.js:** Middleware to check if a user is logged in before accessing protected routes.
 - **multer-config.js:** Middleware for handling file uploads (product images, user profile pictures, etc.).
 
+## Screenshots
+Here are some previews of the project:
+
+### Login & SignUp Page
+![E-commerceproject](Screenshots/screen1.png)
+
+### Home Page
+![E-commerceproject](Screenshots/screen2.png)
+
+### Cart Page
+![E-commerceproject](Screenshots/screen3.png)
+
+### Owner SignUp Page
+![E-commerceproject](Screenshots/screen4.png)
+
+### Owner can create product on this Page
+![E-commerceproject](Screenshots/screen5.png)
+
+
 ## Future Improvements
 - Implement Stripe or PayPal payment gateway for checkout.
 - Add role-based access control for admin and users.
@@ -111,3 +130,11 @@ project-folder/
 
 ## License
 This project is licensed under the MIT License.
+
+## 📬Contact
+
+GitHub: NishantChaubey534
+
+Email: chaubeynishant2@gmail.com
+
+📢 Star this repo if you found it helpful! ⭐
